@@ -50,7 +50,6 @@ public class UserView extends BasicView {
             if(passwordPasswordField.getText().equals(passwordRepeatPasswordField.getText())){
                user = new User(emailTextField.getText(), passwordPasswordField.getText());
                userController.createUser(user);
-               userController.viewRecipes();
             }
             else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -93,7 +92,8 @@ public class UserView extends BasicView {
         Button inputButton = new Button("Вход");
         Button registrationButton = new Button("Регистрация");
         inputButton.setOnAction(actionEvent -> {
-
+            user = new User(emailTextField.getText(), passwordPasswordField.getText());
+            userController.authenticationUser(user);
         });
         registrationButton.setOnAction(actionEvent -> {
             userController.viewRegistrationForm();

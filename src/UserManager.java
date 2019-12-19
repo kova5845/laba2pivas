@@ -20,12 +20,38 @@ public class UserManager {
         else{
             userList.add(user);
             loginList.add(user.getLogin());
-
+            userController.viewRecipes();
         }
     }
 
     public void authorizeUser(User user){
+        if(findUser(user.getLogin(), user.getPassword()) != null){
+            userController.viewRecipes();
+        }
+        else{
+            userController.cancelAuthenticationUser();
+        }
+    }
 
+    public User findUser(String login, String password) {
+        for (User user : userList) {
+            if (user.getLogin().equals(login) &&
+                user.getPassword().equals(password)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public void deleteRecipe(String name, String description) {
+        for (User user : userList) {
+            for (Recipe recipe : user.getRecipeList()){
+                if (recipe.getName().equals(name) &&
+                        recipe.getDescription().equals(description)) {
+                    user.getRecipeList().remove(recipe);
+                }
+            }
+        }
     }
 
     public void deleteUser(){

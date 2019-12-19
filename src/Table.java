@@ -23,10 +23,12 @@ public class Table {
         table = new TableView<>();
         recipeColumn = new TableColumn<>("Рецепты");
         recipeColumn.setCellValueFactory(new PropertyValueFactory<Recipe, String>("name"));
-        table.getColumns().addAll(recipeColumn);
+        recipeColumn.setMinWidth(table.getWidth());
+        table.getColumns().add(recipeColumn);
         table.setEditable(true);
         pagination.setPageCount(data.size() / rowsPerPage + 1);
         pagination.setPageFactory(this::createPage);
+        data.addAll(new Recipe("name1"));
     }
 
     public ArrayList<Recipe> getData() {

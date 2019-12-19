@@ -35,8 +35,8 @@ public class UserController extends Controller {
         userView.input(initializer.getStage());
     }
 
-    public void authenticationUser(){
-
+    public void authenticationUser(User user){
+        this.userManager.authorizeUser(user);
     }
 
     public void cancelAuthenticationUser(){
@@ -45,6 +45,10 @@ public class UserController extends Controller {
 
     public void cancelRegistrationUser(){
         userView.cancelRegistrationUser();
+    }
+
+    public void deleteRecipe(Recipe recipe){
+        userManager.deleteRecipe(recipe);
     }
 
     private User getUser(){

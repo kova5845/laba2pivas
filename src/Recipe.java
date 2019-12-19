@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Recipe {
@@ -5,6 +6,12 @@ public class Recipe {
     private String name;
     private String description;
     private List<RecipeComponent> recipeComponentList;
+
+    Recipe(String name){
+        this.name = name;
+        this.description = "";
+        this.recipeComponentList = new ArrayList<>();
+    }
 
     public String getName() {
         return name;
@@ -20,6 +27,10 @@ public class Recipe {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void addRecipeComponent(RecipeComponent recipeComponent){
+        recipeComponentList.add(recipeComponent);
     }
 
     public List<RecipeComponent> getRecipeComponentList() {

@@ -15,6 +15,10 @@ public class RecipeController extends Controller {
         this.userController = userController;
     }
 
+    public void viewInputForm(){
+       userController.viewInputForm();
+    }
+
     public void processRequest(){
 
     }
@@ -23,24 +27,24 @@ public class RecipeController extends Controller {
         recipeView.viewRecipes(initializer.getStage());
     }
 
-    public void viewRecipe(){
-
+    public void viewRecipe(Recipe recipe){
+        recipeView.viewRecipe(initializer.getStage(), recipe);
     }
 
-    public void editRecipe(){
-
+    public void editRecipe(Recipe recipe){
+        recipeView.editRecipe(initializer.getStage(), recipe);
     }
 
     public void createRecipe(){
-
+        recipeView.createRecipe(initializer.getStage());
     }
 
-    public void deleteRecipe(){
-
+    public void deleteRecipe(Recipe recipe){
+        userController.deleteRecipe(recipe);
     }
 
     private Recipe getRecipe(){
-        return new Recipe();
+        return new Recipe("qwe");
     }
 
     private List<Recipe> getRecipes(){
