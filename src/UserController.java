@@ -13,6 +13,10 @@ public class UserController extends Controller {
         this.userManager = new UserManager(this);
     }
 
+    public boolean isUserRecipe(Recipe recipe){
+        return userManager.isUserRecipe(recipe);
+    }
+
     public void addController(RecipeController recipeController){
         this.recipeController = recipeController;
     }

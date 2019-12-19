@@ -11,6 +11,10 @@ public class RecipeController extends Controller {
         this.recipeView = new RecipeView(this);
     }
 
+    public boolean isUserRecipe(Recipe recipe){
+        return userController.isUserRecipe(recipe);
+    }
+
     public void addController(UserController userController){
         this.userController = userController;
     }
@@ -36,7 +40,9 @@ public class RecipeController extends Controller {
     }
 
     public void editRecipe(Recipe recipe){
-        recipeView.editRecipe(initializer.getStage(), recipe);
+        if(userController.isUserRecipe(recipe)) {
+            recipeView.editRecipe(initializer.getStage(), recipe);
+        }
     }
 
     public void createRecipe(){

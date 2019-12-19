@@ -22,6 +22,10 @@ public class User {
         this.recipeList = new ArrayList<>();
     }
 
+    public boolean isUserRecipe(Recipe recipe){
+        return recipeList.contains(recipe);
+    }
+
     public void deleteRecipe(Recipe recipe){
         if(recipeList.contains(recipe)){
             recipeList.remove(recipe);

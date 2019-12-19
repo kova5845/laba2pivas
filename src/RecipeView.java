@@ -1,4 +1,3 @@
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,10 +14,12 @@ import java.util.List;
 public class RecipeView extends BasicView {
     private List<Recipe> recipes;
     private RecipeController recipeController;
+    private RecipeComponentController recipeComponentController;
     private  Table table = new Table();
 
     RecipeView(RecipeController recipeController){
         this.recipeController = recipeController;
+        this.recipeComponentController = new RecipeComponentController(this);
     }
 
     public void refreshTable(List<Recipe> data){
@@ -82,7 +83,8 @@ public class RecipeView extends BasicView {
             components += recipeComponent.getName() + ":\n";
             components += recipeComponent.getCookingMethod()+ "\n\n";
         }
-        String description = recipe.getName();
+        String description = "Название:\n";
+        description += recipe.getName();
         description += "\nОписание:\n";
         description += recipe.getDescription();
         Label componentLabel = new Label();
@@ -106,7 +108,6 @@ public class RecipeView extends BasicView {
         });
         deleteRecipeButton.setOnAction(actionEvent -> {
             recipeController.deleteRecipe(recipe);
-            recipeController.viewRecipes();
         });
         Scene scene = new Scene(borderPane, 800, 500);
         primaryStage.setScene(scene);
@@ -156,6 +157,7 @@ public class RecipeView extends BasicView {
             newRecipe.setDescription(descriptionTextField.getText());
             recipeController.deleteRecipe(recipe);
             recipeController.addRecipe(newRecipe);
+            recipeController.viewRecipes();
         });
         Scene scene = new Scene(borderPane, 800, 500);
         primaryStage.setScene(scene);

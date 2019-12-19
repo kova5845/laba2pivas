@@ -13,6 +13,10 @@ public class UserManager {
         this.loginList = new ArrayList<>();
     }
 
+    public boolean isUserRecipe(Recipe recipe){
+        return currentUser.isUserRecipe(recipe);
+    }
+
     public void registerUser(User user){
         if(loginList.contains(user.getLogin())){
             userController.cancelRegistrationUser();
@@ -26,8 +30,9 @@ public class UserManager {
     }
 
     public void authorizeUser(String login, String password){
-
-        if(checkPassword(findUserByLogin(login), password)){
+        User user = findUserByLogin(login);
+        if(checkPassword(user, password)){
+            currentUser = user;
             userController.viewRecipes();
         }
         else{
