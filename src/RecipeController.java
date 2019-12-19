@@ -23,6 +23,10 @@ public class RecipeController extends Controller {
 
     }
 
+    public void refreshTable(List<Recipe> data){
+        recipeView.refreshTable(data);
+    }
+
     public void viewRecipes(){
         recipeView.viewRecipes(initializer.getStage());
     }
@@ -41,6 +45,10 @@ public class RecipeController extends Controller {
 
     public void deleteRecipe(Recipe recipe){
         userController.deleteRecipe(recipe);
+    }
+
+    public void addRecipe(Recipe recipe){
+        userController.addRecipe(recipe);
     }
 
     private Recipe getRecipe(){

@@ -17,6 +17,6 @@ public class RecipeComponentController extends Controller {
     }
 
     private RecipeComponent getRecipeComponent(){
-        return new RecipeComponent();
+        return new RecipeComponent("", "");
     }
 }

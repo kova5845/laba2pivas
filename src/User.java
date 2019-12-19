@@ -22,6 +22,16 @@ public class User {
         this.recipeList = new ArrayList<>();
     }
 
+    public void deleteRecipe(Recipe recipe){
+        if(recipeList.contains(recipe)){
+            recipeList.remove(recipe);
+        }
+    }
+
+    public void addRecipe(Recipe recipe){
+        recipeList.add(recipe);
+    }
+
     public String getName() {
         return name;
     }

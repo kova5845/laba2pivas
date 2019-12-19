@@ -28,7 +28,6 @@ public class Table {
         table.setEditable(true);
         pagination.setPageCount(data.size() / rowsPerPage + 1);
         pagination.setPageFactory(this::createPage);
-        data.addAll(new Recipe("name1"));
     }
 
     public ArrayList<Recipe> getData() {

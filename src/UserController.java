@@ -1,3 +1,5 @@
+import javax.swing.*;
+import java.util.List;
 
 public class UserController extends Controller {
     private UserManager userManager;
@@ -35,8 +37,8 @@ public class UserController extends Controller {
         userView.input(initializer.getStage());
     }
 
-    public void authenticationUser(User user){
-        this.userManager.authorizeUser(user);
+    public void authenticationUser(String login, String password){
+        this.userManager.authorizeUser(login, password);
     }
 
     public void cancelAuthenticationUser(){
@@ -49,6 +51,14 @@ public class UserController extends Controller {
 
     public void deleteRecipe(Recipe recipe){
         userManager.deleteRecipe(recipe);
+    }
+
+    public void addRecipe(Recipe recipe){
+        userManager.addRecipe(recipe);
+    }
+
+    public void refreshTable(List<Recipe> data){
+        recipeController.refreshTable(data);
     }
 
     private User getUser(){

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserManager {
-
+    private User currentUser;
     private UserController userController;
     private List<User> userList;
     private List<String> loginList;
@@ -20,12 +20,14 @@ public class UserManager {
         else{
             userList.add(user);
             loginList.add(user.getLogin());
+            currentUser = user;
             userController.viewRecipes();
         }
     }
 
-    public void authorizeUser(User user){
-        if(findUser(user.getLogin(), user.getPassword()) != null){
+    public void authorizeUser(String login, String password){
+
+        if(checkPassword(findUserByLogin(login), password)){
             userController.viewRecipes();
         }
         else{
@@ -33,37 +35,39 @@ public class UserManager {
         }
     }
 
-    public User findUser(String login, String password) {
-        for (User user : userList) {
-            if (user.getLogin().equals(login) &&
-                user.getPassword().equals(password)) {
-                return user;
-            }
-        }
-        return null;
+    public void deleteRecipe(Recipe recipe) {
+        currentUser.deleteRecipe(recipe);
+        refreshTable();
     }
 
-    public void deleteRecipe(String name, String description) {
-        for (User user : userList) {
-            for (Recipe recipe : user.getRecipeList()){
-                if (recipe.getName().equals(name) &&
-                        recipe.getDescription().equals(description)) {
-                    user.getRecipeList().remove(recipe);
-                }
-            }
+    public void addRecipe(Recipe recipe){
+        currentUser.addRecipe(recipe);
+        refreshTable();
+    }
+
+    private void refreshTable(){
+        List<Recipe> allRecipes = new ArrayList<>();
+        for(User user : userList){
+            allRecipes.addAll(user.getRecipeList());
         }
+        userController.refreshTable(allRecipes);
     }
 
     public void deleteUser(){
 
     }
 
-    private User findUserByLogin(){
-        return new User("qwe", "qwe");
+    private User findUserByLogin(String login){
+        for (User user : userList) {
+            if (user.getLogin().equals(login)){
+                return user;
+            }
+        }
+        return null;
     }
 
-    private boolean checkPassword(){
-        return true;
+    private boolean checkPassword(User user, String password){
+        return user.getPassword().equals(password);
     }
 
     public List<User> getUserList() {

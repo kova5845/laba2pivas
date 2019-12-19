@@ -92,8 +92,7 @@ public class UserView extends BasicView {
         Button inputButton = new Button("Вход");
         Button registrationButton = new Button("Регистрация");
         inputButton.setOnAction(actionEvent -> {
-            user = new User(emailTextField.getText(), passwordPasswordField.getText());
-            userController.authenticationUser(user);
+            userController.authenticationUser(emailTextField.getText(), passwordPasswordField.getText());
         });
         registrationButton.setOnAction(actionEvent -> {
             userController.viewRegistrationForm();
