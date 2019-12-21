@@ -108,6 +108,7 @@ public class RecipeView extends BasicView {
         });
         deleteRecipeButton.setOnAction(actionEvent -> {
             recipeController.deleteRecipe(recipe);
+            recipeController.viewRecipes();
         });
         Scene scene = new Scene(borderPane, 800, 500);
         primaryStage.setScene(scene);

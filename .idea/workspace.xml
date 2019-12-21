@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dc99a6ac-90c7-49fc-a27d-d14c38e8b63c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pivas2/RecipeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pivas2/RecipeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/pivas2/RecipeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pivas2/RecipeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RecipeComponentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RecipeComponentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RecipeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RecipeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +69,7 @@
       <updated>1576672145334</updated>
       <workItem from="1576672161001" duration="6247000" />
       <workItem from="1576761736705" duration="32773000" />
+      <workItem from="1576818777377" duration="2634000" />
     </task>
     <servers />
   </component>
@@ -86,7 +81,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

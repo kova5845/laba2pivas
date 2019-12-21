@@ -72,4 +72,8 @@ public class RecipeController extends Controller {
     public void setRecipeView(RecipeView recipeView) {
         this.recipeView = recipeView;
     }
+
+    public void change(){
+    	
+    }
 }
