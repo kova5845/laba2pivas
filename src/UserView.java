@@ -48,8 +48,7 @@ public class UserView extends BasicView {
         });
         registrationButton.setOnAction(actionEvent -> {
             if(passwordPasswordField.getText().equals(passwordRepeatPasswordField.getText())){
-               user = new User(emailTextField.getText(), passwordPasswordField.getText());
-               userController.createUser(user);
+               userController.createUser(emailTextField.getText(), passwordPasswordField.getText());
             }
             else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);

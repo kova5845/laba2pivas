@@ -14,12 +14,10 @@ import java.util.List;
 public class RecipeView extends BasicView {
     private List<Recipe> recipes;
     private RecipeController recipeController;
-    private RecipeComponentController recipeComponentController;
     private  Table table = new Table();
 
     RecipeView(RecipeController recipeController){
         this.recipeController = recipeController;
-        this.recipeComponentController = new RecipeComponentController(this);
     }
 
     public void refreshTable(List<Recipe> data){

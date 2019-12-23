@@ -26,6 +26,7 @@ public class Initializer extends Application {
         this.primaryStage = primaryStage;
         UserController userController = new UserController(this);
         RecipeController recipeController = new RecipeController(this);
+        RecipeComponentController recipeComponentController = new RecipeComponentController(this);
         userController.addController(recipeController);
         recipeController.addController(userController);
         userController.viewRegistrationForm();

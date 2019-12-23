@@ -1,6 +1,7 @@
 public class RecipeComponent {
     private String name;
     private String cookingMethod;
+    private Ingredient ingredient;
 
     RecipeComponent(String name, String cookingMethod){
         this.name = name;
@@ -21,5 +22,13 @@ public class RecipeComponent {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Ingredient getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
     }
 }

@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.util.List;
 
 public class UserController extends Controller {
@@ -33,8 +32,8 @@ public class UserController extends Controller {
         userView.registration(initializer.getStage());
     }
 
-    public void createUser(User user){
-        this.userManager.registerUser(user);
+    public void createUser(String login, String password){
+        this.userManager.registerUser(login, password);
     }
 
     public void viewInputForm(){

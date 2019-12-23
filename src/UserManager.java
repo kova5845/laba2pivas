@@ -17,11 +17,12 @@ public class UserManager {
         return currentUser.isUserRecipe(recipe);
     }
 
-    public void registerUser(User user){
-        if(loginList.contains(user.getLogin())){
+    public void registerUser(String login, String password){
+        if(loginList.contains(login)){
             userController.cancelRegistrationUser();
         }
         else{
+            User user = new User(login, password);
             userList.add(user);
             loginList.add(user.getLogin());
             currentUser = user;

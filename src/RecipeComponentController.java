@@ -1,8 +1,8 @@
 public class RecipeComponentController extends Controller {
-    private RecipeView recipeView;
+    private Initializer initializer;
 
-    RecipeComponentController(RecipeView recipeView){
-        this.recipeView = recipeView;
+    RecipeComponentController(Initializer initializer){
+        this.initializer = initializer;
     }
 
     public void processRequest(){

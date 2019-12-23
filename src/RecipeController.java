@@ -5,6 +5,8 @@ public class RecipeController extends Controller {
     private RecipeView recipeView;
     private Initializer initializer;
     private UserController userController;
+    private Recipe recipe;
+    private RecipeComponent recipeComponent;
 
     RecipeController(Initializer initializer){
         this.initializer = initializer;
@@ -75,5 +77,17 @@ public class RecipeController extends Controller {
 
     public void change(){
     	
+    }
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
+    public RecipeComponent getRecipeComponent() {
+        return recipeComponent;
+    }
+
+    public void setRecipeComponent(RecipeComponent recipeComponent) {
+        this.recipeComponent = recipeComponent;
     }
 }
